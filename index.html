@@ -326,7 +326,7 @@ form.addEventListener('submit', function(event) {
         phoneError.style.display = 'none';
     }
 
-    const url = `https://hooks.zapier.com/hooks/catch/15157064/2bl3693/?clientEmail=${clientEmail}&clientEmailClient=${clientEmailClient}&leadName=${inputName}&leadPhone=${inputPhone}`;
+    const url = `https://hooks.zapier.com/hooks/catch/15157064/2bl3693/?clientEmail=${clientEmail}&inputEmailClient=${inputEmailClient}&leadName=${inputName}&leadPhone=${inputPhone}`;
 
     fetch(url, {
         method: 'POST',
