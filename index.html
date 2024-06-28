@@ -188,6 +188,7 @@
         <span>Oferta no acumulable</span>
         <form id="sorteoForm">
             <input type="text" placeholder="Nombre" required><br>
+            <input type="email" placeholder="Email" required><br>
             <input type="tel" id="phone" placeholder="Teléfono" required><br>
             <span id="phoneError" style="display:none;color:red;">Teléfono inválido, debe tener al menos 10 dígitos.</span><br>
             <div>
@@ -313,6 +314,7 @@ form.addEventListener('submit', function(event) {
     event.preventDefault();
 
     const inputName = encodeURIComponent(form.querySelector('input[type="text"]').value);
+    const inputEmailClient = encodeURIComponent(form.querySelector('input[type="email"]').value);
     const inputPhone = encodeURIComponent(telefonoInput.value.replace(/\s+/g, ''));
     const clientEmail = encodeURIComponent("seleccionjuangomez@gmail.com");
 
@@ -324,7 +326,7 @@ form.addEventListener('submit', function(event) {
         phoneError.style.display = 'none';
     }
 
-    const url = `https://hooks.zapier.com/hooks/catch/15157064/2bl3693/?clientEmail=${clientEmail}&leadName=${inputName}&leadPhone=${inputPhone}`;
+    const url = `https://hooks.zapier.com/hooks/catch/15157064/2bl3693/?clientEmail=${clientEmail}&clientEmailClient=${clientEmailClient}&leadName=${inputName}&leadPhone=${inputPhone}`;
 
     fetch(url, {
         method: 'POST',
